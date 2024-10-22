@@ -4,53 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb056907-e539-4b74-9a53-5bb79764cd78" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Config/JwtUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Config/Validación.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Config/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Controller/CategoriaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Controller/ClienteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Controller/MetodoPagoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Controller/ProductoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Dao/CategoriaDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Dao/ClienteDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Dao/ICategoria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Dao/ICliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Dao/IMetododePago.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Dao/IProducto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Dao/MetodoPagoDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Dao/ProductoDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/DataBase/DatabaseConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Model/CarritoCompra.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Model/Categoria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Model/Cliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Model/ComentarioValoracion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Model/DireccionEnvio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Model/MetodoPago.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Model/Pedido.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Model/Producto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Model/Proveedor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Model/Rol_Usuario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Model/Transaccion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Model/Usuario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/ProyectoxdApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Service/ServiceCategoriaDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Service/ServiceMetodoPago.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Service/ServiceProductoDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Service/ServicesClienteDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/utp/edu/pe/proyectoxd/ProyectoxdApplicationTests.java" afterDir="false" />
-    </list>
+    <list default="true" id="cb056907-e539-4b74-9a53-5bb79764cd78" name="Changes" comment="Proyecto web" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -166,6 +120,19 @@
       <option name="presentableId" value="Default" />
       <updated>1716758562598</updated>
     </task>
+    <task id="LOCAL-00001" summary="Proyecto web">
+      <option name="closed" value="true" />
+      <created>1729633474372</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1729633474372</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Proyecto web" />
+    <option name="LAST_COMMIT_MESSAGE" value="Proyecto web" />
   </component>
 </project>
