@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cb056907-e539-4b74-9a53-5bb79764cd78" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Config/JwtUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Config/Validación.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Controller/CategoriaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Controller/ClienteController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Controller/MetodoPagoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Controller/ProductoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Dao/CategoriaDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Dao/ClienteDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Dao/ICategoria.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Dao/ICliente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Dao/IMetododePago.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Dao/IProducto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Dao/MetodoPagoDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Dao/ProductoDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/DataBase/DatabaseConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Model/CarritoCompra.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Model/Categoria.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Model/Cliente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Model/ComentarioValoracion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Model/DireccionEnvio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Model/MetodoPago.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Model/Pedido.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Model/Producto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Model/Proveedor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Model/Rol_Usuario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Model/Transaccion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Model/Usuario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/ProyectoxdApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Service/ServiceCategoriaDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Service/ServiceMetodoPago.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Service/ServiceProductoDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Service/ServicesClienteDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/utp/edu/pe/proyectoxd/ProyectoxdApplicationTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Interface" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/pom.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Controller/CategoriaController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Controller/ClienteController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Controller/MetodoPagoController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Controller/ProductoController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Dao/CategoriaDao.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Dao/ClienteDao.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Dao/ICategoria.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Dao/ICliente.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Dao/IMetododePago.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Dao/IProducto.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Dao/MetodoPagoDao.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Model/CarritoCompra.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Service/ServiceCategoriaDao.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Service/ServiceMetodoPago.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Service/ServicesClienteDao.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="downloadAnnotationsAutomatically" value="true" />
+        <option name="jdkForImporter" value="22" />
+        <option name="workspaceImportForciblyTurnedOn" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2h1PMaHzN2KTgBStE2kQLqi53ZE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="sortByType" value="true" />
+    <option name="sortKey" value="BY_TYPE" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ProyectoxdApplication.executor": "Run",
+    "Notification.DisplayName-DoNotAsk-WindowsDefender": "Microsoft Defender configuration",
+    "Notification.DoNotAsk-WindowsDefender": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/danyn/OneDrive/Escritorio/ejemplo-spring",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "copyright"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.utp.edu.pe.proyectoxd.Config" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\danyn\OneDrive\Documentos\proyectoxd\src\main\java" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.utp.edu.pe.proyectoxd.Config" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="ProyectoxdApplication" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-22" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.utp.edu.pe.proyectoxd.ProyectoxdApplication" />
+      <module name="proyectoxd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.utp.edu.pe.proyectoxd.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cb056907-e539-4b74-9a53-5bb79764cd78" name="Changes" comment="" />
+      <created>1716758562598</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1716758562598</updated>
+    </task>
+    <servers />
+  </component>
+</project>
