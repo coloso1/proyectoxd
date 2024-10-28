@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb056907-e539-4b74-9a53-5bb79764cd78" name="Changes" comment="Proyecto web" />
+    <list default="true" id="cb056907-e539-4b74-9a53-5bb79764cd78" name="Changes" comment="Proyecto web">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/crudCliente.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/ClienteCrud.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/CrudClientes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/MetodoPagoCrud.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/ProductoCrud.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Controller/CategoriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Controller/CategoriaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Controller/ClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Controller/ProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Controller/ProductoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Controller/SpringController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Controller/SpringController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Dao/ProductoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Dao/ProductoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Model/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utp/edu/pe/proyectoxd/Model/Producto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/lib/animate/animate.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/lib/animate/animate.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/lib/animate/animate.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/lib/animate/animate.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/lib/easing/easing.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/lib/easing/easing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/lib/owlcarousel/owl.carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/lib/owlcarousel/owl.carousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/lib/tempusdominus/css/tempusdominus-bootstrap-4.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/lib/tempusdominus/css/tempusdominus-bootstrap-4.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,8 +35,8 @@
       <list>
         <option value="Kotlin Interface" />
         <option value="Interface" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -77,7 +97,7 @@
     &quot;Notification.DisplayName-DoNotAsk-WindowsDefender&quot;: &quot;Microsoft Defender configuration&quot;,
     &quot;Notification.DoNotAsk-WindowsDefender&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/danyn/Downloads/proyectoxd/src/main/resources/static/img&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
@@ -146,6 +166,17 @@
     </task>
     <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Proyecto web" />

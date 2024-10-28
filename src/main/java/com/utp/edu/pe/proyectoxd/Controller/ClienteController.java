@@ -3,10 +3,10 @@ package com.utp.edu.pe.proyectoxd.Controller;
 import com.utp.edu.pe.proyectoxd.Model.Cliente;
 import com.utp.edu.pe.proyectoxd.Service.ServicesClienteDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/Cliente")
 public class ClienteController {
@@ -37,4 +37,6 @@ public class ClienteController {
     public int Eliminar(@PathVariable("id") long IdCliente) {
         return servicesClienteDao.Eliminar(IdCliente);
     }
+
+
 }

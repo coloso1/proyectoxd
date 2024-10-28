@@ -51,6 +51,30 @@ public class SpringController {
         return "team";
     }
 
+    @GetMapping("/CrudClientes")
+    public String CrudClientes () {
+        return "CrudClientes";
+    }
+
+    @GetMapping("/ClienteCrud")
+    public String ClienteCrud() {
+        return "ClienteCrud";
+    }
+
+    @GetMapping("/ProductoCrud")
+    public String ProductoCrud() {
+        return "ProductoCrud";
+    }
+
+    @GetMapping("/MetodoPagoCrud")
+    public String MetodoPagoCrud() {
+        return "MetodoPagoCrud";
+    }
+
+
+    
+    
+
 
 
 

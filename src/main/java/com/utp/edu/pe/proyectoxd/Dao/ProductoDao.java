@@ -27,14 +27,16 @@ public class ProductoDao implements IProducto {
 
     @Override
     public int Insertar(Producto objeto) {
-        String SQL = "INSERT INTO Producto (IdCategoria, nombre, precio, descripcion) VALUES (?, ?, ?, ?)";
-        return jdbcTemplate.update(SQL, objeto.getIdCategoria(), objeto.getNombre(), objeto.getPrecio(), objeto.getDescripcion());
+        // Agregar el campo Stock en la consulta SQL
+        String SQL = "INSERT INTO Producto (IdCategoria, nombre, precio, descripcion, stock) VALUES (?, ?, ?, ?, ?)";
+        return jdbcTemplate.update(SQL, objeto.getIdCategoria(), objeto.getNombre(), objeto.getPrecio(), objeto.getDescripcion(), objeto.getStock());
     }
 
     @Override
     public int Actualizar(Producto objeto) {
-        String SQL = "UPDATE Producto SET IdCategoria = ?, nombre = ?, precio = ?, descripcion = ? WHERE IdProducto = ? AND Estado = 1"; // Corrigiendo la sintaxis
-        return jdbcTemplate.update(SQL, objeto.getIdCategoria(), objeto.getNombre(), objeto.getPrecio(), objeto.getDescripcion(), objeto.getIdProducto());
+        // Asegúrate de actualizar también el Stock
+        String SQL = "UPDATE Producto SET IdCategoria = ?, nombre = ?, precio = ?, descripcion = ?, stock = ? WHERE IdProducto = ? AND Estado = 1";
+        return jdbcTemplate.update(SQL, objeto.getIdCategoria(), objeto.getNombre(), objeto.getPrecio(), objeto.getDescripcion(), objeto.getStock(), objeto.getIdProducto());
     }
 
     @Override
@@ -52,7 +54,8 @@ public class ProductoDao implements IProducto {
                     rs.getLong("IdCategoria"),
                     rs.getString("nombre"),
                     rs.getFloat("precio"),
-                    rs.getString("descripcion") // Corrigiendo el nombre de la columna
+                    rs.getString("descripcion"),
+                    rs.getInt("stock") // Agregar el mapeo del Stock
             );
         }
     }

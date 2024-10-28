@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Clientes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+<style>
+    /* Estilos personalizados */
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #f8f9fc;
+    }
+
+    /* Sidebar */
+    #sidebar {
+        height: 100vh;
+        width: 250px;
+        position: fixed;
+        background-color: #4e73df;
+        color: white;
+        padding-top: 20px;
+    }
+
+    #sidebar h3 {
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    #sidebar .nav-link {
+        color: white;
+        padding: 15px 20px;
+        font-size: 18px;
+    }
+
+    #sidebar .nav-link.active {
+        background-color: #1c3557;
+        border-radius: 5px;
+    }
+
+    /* Contenido principal */
+    #main-content {
+        margin-left: 270px;
+        padding: 20px;
+    }
+
+    /* Tabla */
+    .table-wrapper {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    .table thead th {
+        background-color: #f8f9fa;
+    }
+
+    .table td, .table th {
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    /* Botones */
+    .btn-primary {
+        background-color: #4e73df;
+        border-color: #4e73df;
+    }
+
+    .btn-danger {
+        background-color: #e74a3b;
+        border-color: #e74a3b;
+    }
+
+    .btn-success {
+        background-color: #1cc88a;
+        border-color: #1cc88a;
+    }
+</style>
+<body>
+<div id="sidebar">
+    <h3>Admin Panel</h3>
+    <nav class="nav flex-column">
+        <a class="nav-link active" href="/">Clientes</a>
+        <a class="nav-link" href="/ProductoCrud">Productos</a>
+        <a class="nav-link" href="/MetodoPagoCrud">Metodo Pagos</a>
+        <a class="nav-link" href="#">Usuarios</a>
+    </nav>
+</div>
+
+<div id="main-content">
+    <!-- Header -->
+    <div class="header">
+        <h1>Gestión de Clientes</h1>
+    </div>
+
+    <!-- Nuevo Cliente Button -->
+    <button class="btn btn-success mb-4" onclick="openForm()">Nuevo Cliente</button>
+
+    <!-- Client Form Modal -->
+    <div class="modal" id="clientModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Nuevo Cliente</h5>
+                    <button type="button" class="close" onclick="closeForm()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="clientForm">
+                        <input type="hidden" id="clientId">
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="apellido">Apellido</label>
+                            <input type="text" class="form-control" id="apellido" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dni">DNI</label>
+                            <input type="number" class="form-control" id="dni" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="correo">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="correo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="text" class="form-control" id="telefono" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="direccion">Dirección</label>
+                            <input type="text" class="form-control" id="direccion" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Guardar Cliente</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Table -->
+    <div class="table-wrapper">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>DNI</th>
+                <th>Correo</th>
+                <th>Teléfono</th>
+                <th>Dirección</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody id="clientTableBody">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script>
+    // Modal Functions
+    function openForm() {
+        $('#clientModal').modal('show');
+    }
+
+    function closeForm() {
+        $('#clientModal').modal('hide');
+        resetForm();
+    }
+
+    document.getElementById('clientForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const id = document.getElementById('clientId').value;
+        const client = {
+            nombre: document.getElementById('nombre').value,
+            apellido: document.getElementById('apellido').value,
+            dni: document.getElementById('dni').value,
+            correoelectronico: document.getElementById('correo').value,
+            telefono: document.getElementById('telefono').value,
+            direccion: document.getElementById('direccion').value,
+        };
+
+        if (id) {
+            // Actualizar cliente
+            fetch(`/Cliente/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(client)
+            }).then(() => {
+                Swal.fire('Actualizado!', 'El cliente ha sido actualizado.', 'success');
+                closeForm();
+                fetchClients();
+            });
+        } else {
+            // Insertar cliente
+            fetch('/Cliente', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(client)
+            }).then(() => {
+                Swal.fire('Guardado!', 'El cliente ha sido agregado.', 'success');
+                closeForm();
+                fetchClients();
+            });
+        }
+    });
+
+    function fetchClients() {
+        fetch('/Cliente')
+            .then(response => response.json())
+            .then(clients => {
+                const clientTableBody = document.getElementById('clientTableBody');
+                clientTableBody.innerHTML = '';
+                clients.forEach(client => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${client.idCliente}</td>
+                        <td>${client.nombre}</td>
+                        <td>${client.apellido}</td>
+                        <td>${client.dni}</td>
+                        <td>${client.correoelectronico}</td>
+                        <td>${client.telefono}</td>
+                        <td>${client.direccion}</td>
+                        <td>
+                            <button class="btn btn-warning" onclick="editClient(${client.idCliente})">Editar</button>
+                            <button class="btn btn-danger" onclick="deleteClient(${client.idCliente})">Eliminar</button>
+                        </td>
+                    `;
+                    clientTableBody.appendChild(row);
+                });
+            });
+    }
+
+    function editClient(id) {
+        fetch(`/Cliente/${id}`)
+            .then(response => response.json())
+            .then(client => {
+                document.getElementById('clientId').value = client.idCliente;
+                document.getElementById('nombre').value = client.nombre;
+                document.getElementById('apellido').value = client.apellido;
+                document.getElementById('dni').value = client.dni;
+                document.getElementById('correo').value = client.correoelectronico;
+                document.getElementById('telefono').value = client.telefono;
+                document.getElementById('direccion').value = client.direccion;
+                openForm();
+            });
+    }
+
+    function deleteClient(id) {
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: "No podrás revertir esta acción.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Sí, eliminar',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`/Cliente/${id}`, {
+                    method: 'DELETE'
+                }).then(() => {
+                    Swal.fire('Eliminado!', 'El cliente ha sido eliminado.', 'success');
+                    fetchClients();
+                });
+            }
+        });
+    }
+
+    function resetForm() {
+        document.getElementById('clientId').value = '';
+        document.getElementById('clientForm').reset();
+    }
+
+    document.addEventListener('DOMContentLoaded', fetchClients);
+</script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Métodos de Pago</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+<style>
+  /* Estilos personalizados */
+  body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f9fc;
+  }
+
+  /* Sidebar */
+  #sidebar {
+      height: 100vh;
+      width: 250px;
+      position: fixed;
+      background-color: #4e73df;
+      color: white;
+      padding-top: 20px;
+  }
+
+  #sidebar h3 {
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+  }
+
+  #sidebar .nav-link {
+      color: white;
+      padding: 15px 20px;
+      font-size: 18px;
+  }
+
+  #sidebar .nav-link.active {
+      background-color: #1c3557;
+      border-radius: 5px;
+  }
+
+  /* Contenido principal */
+  #main-content {
+      margin-left: 270px;
+      padding: 20px;
+  }
+
+  /* Tabla */
+  .table-wrapper {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+  }
+
+  .table thead th {
+      background-color: #f8f9fa;
+  }
+
+  .table td, .table th {
+      vertical-align: middle;
+      text-align: center;
+  }
+
+  /* Botones */
+  .btn-primary {
+      background-color: #4e73df;
+      border-color: #4e73df;
+  }
+
+  .btn-danger {
+      background-color: #e74a3b;
+      border-color: #e74a3b;
+  }
+
+  .btn-success {
+      background-color: #1cc88a;
+      border-color: #1cc88a;
+  }
+</style>
+<body>
+<div id="sidebar">
+  <h3>Admin Panel</h3>
+  <nav class="nav flex-column">
+    <a class="nav-link" href="#">Métodos de Pago</a>
+    <a class="nav-link" href="#">Otros Enlaces</a>
+  </nav>
+</div>
+
+<div id="main-content">
+  <div class="header">
+    <h1>Gestión de Métodos de Pago</h1>
+  </div>
+
+  <button class="btn btn-success mb-4" onclick="openForm()">Nuevo Método de Pago</button>
+
+  <div class="modal" id="metodoPagoModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Nuevo Método de Pago</h5>
+          <button type="button" class="close" onclick="closeForm()">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="metodoPagoForm">
+            <input type="hidden" id="metodoPagoId">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" class="form-control" id="nombre" required>
+            </div>
+            <div class="form-group">
+              <label for="descripcion">Descripción</label>
+              <textarea class="form-control" id="descripcion" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar Método de Pago</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-wrapper">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Acciones</th>
+      </tr>
+      </thead>
+      <tbody id="metodoPagoTableBody">
+      <!-- Los datos de la base de datos se insertarán aquí -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script>
+  function openForm() {
+      $('#metodoPagoModal').modal('show');
+  }
+
+  function closeForm() {
+      $('#metodoPagoModal').modal('hide');
+      resetForm();
+  }
+
+  document.getElementById('metodoPagoForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const id = document.getElementById('metodoPagoId').value;
+      const metodoPago = {
+          nombre: document.getElementById('nombre').value,
+          descripcion: document.getElementById('descripcion').value
+      };
+
+      if (id) {
+          fetch(`/metodoPago/${id}`, {
+              method: 'PUT',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(metodoPago)
+          }).then(() => {
+              Swal.fire('Actualizado!', 'El método de pago ha sido actualizado.', 'success');
+              closeForm();
+              fetchMetodoPagos();
+          });
+      } else {
+          fetch('/metodoPago', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(metodoPago)
+          }).then(() => {
+              Swal.fire('Guardado!', 'El método de pago ha sido agregado.', 'success');
+              closeForm();
+              fetchMetodoPagos();
+          });
+      }
+  });
+
+  function fetchMetodoPagos() {
+      fetch('/metodoPago')
+          .then(response => {
+              if (!response.ok) {
+                  throw new Error('Error al cargar los métodos de pago');
+              }
+              return response.json();
+          })
+          .then(metodosPago => {
+              const metodoPagoTableBody = document.getElementById('metodoPagoTableBody');
+              metodoPagoTableBody.innerHTML = '';
+              metodosPago.forEach(metodo => {
+                  const row = document.createElement('tr');
+                  row.innerHTML =
+                      `<td>${metodo.idMetodoPago}</td>
+                      <td>${metodo.nombre}</td>
+                      <td>${metodo.descripcion}</td>
+                      <td>
+                          <button class="btn btn-warning" onclick="editMetodoPago(${metodo.idMetodoPago})">Editar</button>
+                          <button class="btn btn-danger" onclick="deleteMetodoPago(${metodo.idMetodoPago})">Eliminar</button>
+                      </td>`;
+                  metodoPagoTableBody.appendChild(row);
+              });
+          })
+          .catch(error => console.error('Error:', error));
+  }
+
+  function editMetodoPago(id) {
+      fetch(`/metodoPago/${id}`)
+          .then(response => response.json())
+          .then(metodo => {
+              document.getElementById('metodoPagoId').value = metodo.idMetodoPago;
+              document.getElementById('nombre').value = metodo.nombre;
+              document.getElementById('descripcion').value = metodo.descripcion;
+              openForm();
+          });
+  }
+
+  function deleteMetodoPago(id) {
+      Swal.fire({
+          title: '¿Estás seguro?',
+          text: "No podrás revertir esta acción.",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonText: 'Sí, eliminar',
+          cancelButtonText: 'Cancelar'
+      }).then((result) => {
+          if (result.isConfirmed) {
+              fetch(`/metodoPago/${id}`, {
+                  method: 'DELETE'
+              }).then(() => {
+                  Swal.fire('Eliminado!', 'El método de pago ha sido eliminado.', 'success');
+                  fetchMetodoPagos();
+              });
+          }
+      });
+  }
+
+  function resetForm() {
+      document.getElementById('metodoPagoId').value = '';
+      document.getElementById('nombre').value = '';
+      document.getElementById('descripcion').value = '';
+  }
+
+  // Cargar métodos de pago al cargar la página
+  window.onload = fetchMetodoPagos;
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Clientes</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="col-md-2 d-none d-md-block bg-primary sidebar">
+            <div class="sidebar-sticky">
+                <h3 class="text-white text-center mt-4">ADMINISTRADOR <sup>2</sup></h3>
+                <ul class="nav flex-column mt-5">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" href="#">
+                            <i class="fas fa-tachometer-alt"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/ProductoCrud">
+                            <i class="fas fa-box"></i> Productos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/MetodoPagoCrud">
+                            <i class="fas fa-tags"></i> Metodo Pago
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">
+                            <i class="fas fa-users"></i> Usuarios
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Main content -->
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Listado de Clientes</h1>
+                <a href="#" class="btn btn-success" th:href="@{/clientes/nuevo}">Nuevo</a>
+            </div>
+            <!-- Table -->
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead class="thead-light">
+                    <tr>
+                        <th>Id</th>
+                        <th>Estado</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>DNI</th>
+                        <th>Correo Electrónico</th>
+                        <th>Teléfono</th>
+                        <th>Dirección</th>
+                        <th>Acciones</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- Thymeleaf loop para mostrar clientes -->
+                    <tr th:each="cliente : ${clientes}">
+                        <td th:text="${cliente.idCliente}">1</td>
+                        <td th:text="${cliente.estado} ? 'Activo' : 'Inactivo'">Activo</td>
+                        <td th:text="${cliente.nombre}">Nombre</td>
+                        <td th:text="${cliente.apellido}">Apellido</td>
+                        <td th:text="${cliente.dni}">DNI</td>
+                        <td th:text="${cliente.correoelectronico}">Correo</td>
+                        <td th:text="${cliente.telefono}">Teléfono</td>
+                        <td th:text="${cliente.direccion}">Dirección</td>
+                        <td>
+                            <a th:href="@{/clientes/editar/{id}(id=${cliente.idCliente})}" class="btn btn-primary btn-sm">
+                                <i class="fas fa-edit"></i> Editar
+                            </a>
+                            <a th:href="@{/clientes/eliminar/{id}(id=${cliente.idCliente})}" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de que deseas eliminar este cliente?');">
+                                <i class="fas fa-trash-alt"></i> Borrar
+                            </a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</div>
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
