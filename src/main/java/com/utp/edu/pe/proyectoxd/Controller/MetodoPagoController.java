@@ -3,12 +3,13 @@ package com.utp.edu.pe.proyectoxd.Controller;
 import com.utp.edu.pe.proyectoxd.Model.MetodoPago;
 import com.utp.edu.pe.proyectoxd.Service.ServiceMetodoPago;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:3000")
-@RestController // Cambiado a @RestController para manejar JSON
+@RestController
 @RequestMapping("/MetodoPago")
 public class MetodoPagoController {
 
@@ -20,23 +21,51 @@ public class MetodoPagoController {
     }
 
     @GetMapping
-    public List<MetodoPago> Listar() {
-        return serviceMetodoPago.Listar();
+    public ResponseEntity<List<MetodoPago>> Listar() {
+        List<MetodoPago> metodos = serviceMetodoPago.Listar();
+        return ResponseEntity.ok(metodos);
     }
 
     @PostMapping
-    public int Insertar(@RequestBody MetodoPago metodoPago) {
-        return serviceMetodoPago.Insertar(metodoPago);
+    public ResponseEntity<String> Insertar(@RequestBody MetodoPago metodoPago) {
+        try {
+            int result = serviceMetodoPago.Insertar(metodoPago);
+            if (result > 0) {
+                return ResponseEntity.status(HttpStatus.CREATED).body("Método de pago agregado con éxito");
+            } else {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No se pudo agregar el método de pago");
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al agregar el método de pago");
+        }
     }
 
     @PutMapping("/{IdMetodoPago}")
-    public int Actualizar(@PathVariable long IdMetodoPago, @RequestBody MetodoPago metodoPago) {
-        metodoPago.setIdMetodoPago(IdMetodoPago); // Asegúrate de que el objeto MetodoPago tenga el ID correcto
-        return serviceMetodoPago.Actualizar(metodoPago);
+    public ResponseEntity<String> Actualizar(@PathVariable long IdMetodoPago, @RequestBody MetodoPago metodoPago) {
+        try {
+            metodoPago.setIdMetodoPago(IdMetodoPago);
+            int result = serviceMetodoPago.Actualizar(metodoPago);
+            if (result > 0) {
+                return ResponseEntity.ok("Método de pago actualizado con éxito");
+            } else {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Método de pago no encontrado");
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al actualizar el método de pago");
+        }
     }
 
     @DeleteMapping("/{IdMetodoPago}")
-    public int Eliminar(@PathVariable long IdMetodoPago) {
-        return serviceMetodoPago.Eliminar(IdMetodoPago);
+    public ResponseEntity<String> Eliminar(@PathVariable long IdMetodoPago) {
+        try {
+            int result = serviceMetodoPago.Eliminar(IdMetodoPago);
+            if (result > 0) {
+                return ResponseEntity.ok("Método de pago eliminado con éxito");
+            } else {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Método de pago no encontrado");
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al eliminar el método de pago");
+        }
     }
 }

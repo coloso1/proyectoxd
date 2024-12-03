@@ -142,15 +142,18 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script>
+  // Función para abrir el formulario
   function openForm() {
       $('#metodoPagoModal').modal('show');
   }
 
+  // Función para cerrar el formulario
   function closeForm() {
       $('#metodoPagoModal').modal('hide');
       resetForm();
   }
 
+  // Escuchar el envío del formulario
   document.getElementById('metodoPagoForm').addEventListener('submit', function (e) {
       e.preventDefault();
       const id = document.getElementById('metodoPagoId').value;
@@ -186,17 +189,13 @@
       }
   });
 
+  // Función para obtener los métodos de pago de la base de datos
   function fetchMetodoPagos() {
-      fetch('/metodoPago')
-          .then(response => {
-              if (!response.ok) {
-                  throw new Error('Error al cargar los métodos de pago');
-              }
-              return response.json();
-          })
+      fetch('/MetodoPago') // Asegúrate de que esta URL esté configurada en tu backend
+          .then(response => response.json())
           .then(metodosPago => {
               const metodoPagoTableBody = document.getElementById('metodoPagoTableBody');
-              metodoPagoTableBody.innerHTML = '';
+              metodoPagoTableBody.innerHTML = ''; // Limpiar la tabla antes de llenarla
               metodosPago.forEach(metodo => {
                   const row = document.createElement('tr');
                   row.innerHTML =
@@ -210,9 +209,10 @@
                   metodoPagoTableBody.appendChild(row);
               });
           })
-          .catch(error => console.error('Error:', error));
+          .catch(error => console.error('Error al cargar los métodos de pago:', error));
   }
 
+  // Función para editar un método de pago
   function editMetodoPago(id) {
       fetch(`/metodoPago/${id}`)
           .then(response => response.json())
@@ -224,6 +224,7 @@
           });
   }
 
+  // Función para eliminar un método de pago
   function deleteMetodoPago(id) {
       Swal.fire({
           title: '¿Estás seguro?',
@@ -244,13 +245,14 @@
       });
   }
 
+  // Función para reiniciar el formulario
   function resetForm() {
       document.getElementById('metodoPagoId').value = '';
       document.getElementById('nombre').value = '';
       document.getElementById('descripcion').value = '';
   }
 
-  // Cargar métodos de pago al cargar la página
+  // Cargar los métodos de pago al cargar la página
   window.onload = fetchMetodoPagos;
 </script>
 </body>

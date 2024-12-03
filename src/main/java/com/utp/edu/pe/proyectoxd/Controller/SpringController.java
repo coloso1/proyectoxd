@@ -56,24 +56,16 @@ public class SpringController {
         return "CrudClientes";
     }
 
-    @GetMapping("/ClienteCrud")
-    public String ClienteCrud() {
-        return "ClienteCrud";
-    }
+    @GetMapping ("ClienteCrud")
+    public  String ClientCrud () { return  "ClienteCrud";}
 
-    @GetMapping("/ProductoCrud")
-    public String ProductoCrud() {
-        return "ProductoCrud";
-    }
-
-    @GetMapping("/MetodoPagoCrud")
-    public String MetodoPagoCrud() {
-        return "MetodoPagoCrud";
-    }
+    @GetMapping ("ProductoCrud")
+    public  String ProductoCrud () { return  "ProductoCrud";}
 
 
-    
-    
+    @GetMapping ("MetodoPagoCrud")
+    public  String MetodoPagoCrud () { return  "MetodoPagoCrud";}
+
 
 
 

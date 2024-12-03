@@ -62,7 +62,7 @@
         <div class="owl-carousel">
             <div class="carousel-item">
                 <div class="carousel-img">
-                    <img src="img/carousel-1.jpg" alt="Imagen de comida">
+                    <img src="https://elpopular.cronosmedia.glr.pe/original/2020/05/01/5eacc096aeb3517afc1ad9f3.jpg" alt="Imagen de comida">
                 </div>
                 <div class="carousel-text">
                     <h1>Excelencia en <span>Ingredientes</span></h1>
@@ -77,7 +77,7 @@
             </div>
             <div class="carousel-item">
                 <div class="carousel-img">
-                    <img src="img/carousel-2.jpg" alt="Imagen de chef">
+                    <img src="https://scontent.fpio1-1.fna.fbcdn.net/v/t39.30808-6/462702329_2602765050113129_4177007615281589753_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeH3hV9DggZA_dOo0ZnTn5u5VSzFVu6kt9NVLMVW7qS304I6EAyoBjU8q6uCs8-J8102LQeDs2a_0dOO340MgWtG&_nc_ohc=9XENuWPxD-sQ7kNvgFQiPBo&_nc_zt=23&_nc_ht=scontent.fpio1-1.fna&_nc_gid=AxQflk0wtrcNwwFJPtwUlVk&oh=00_AYAeK6mbmKAz6h6GXcUOdpO8v3ybyOYVAmCKNXiMxVVhEw&oe=67546CAC" alt="Imagen de chef">
                 </div>
                 <div class="carousel-text">
                     <h1>Nuestros <span>Expertos Chefs</span></h1>
@@ -92,7 +92,7 @@
             </div>
             <div class="carousel-item">
                 <div class="carousel-img">
-                    <img src="img/carousel-3.jpg" alt="Imagen de delivery">
+                    <img src="https://scontent.fpio1-1.fna.fbcdn.net/v/t39.30808-6/319178327_528789155961771_5812873320818478948_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEEOxgeViOHOFHVHcJd9Q0UnM_7wWg5yyecz_vBaDnLJ86fiTag-jHUcqq1TmfVquQYQELgQLnHAEEzIWcQ4OGK&_nc_ohc=E1AqjSoVpTgQ7kNvgH1ZUQ3&_nc_zt=23&_nc_ht=scontent.fpio1-1.fna&_nc_gid=A3bWv9w2awXi8MPGe6VaIsV&oh=00_AYDFMSzpNi2dup_NA5yzN4nB8cm-GTxPj1zOhr8ivbcVUA&oe=67544146" alt="Imagen de delivery">
                 </div>
                 <div class="carousel-text">
                     <h1>Entrega <span>Rápida</span></h1>
@@ -133,10 +133,10 @@
             </div>
             <div class="col-lg-5">
                 <div class="booking-form">
-                    <form>
+                    <form id="booking-form">
                         <div class="control-group">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Nombre" required="required" />
+                                <input type="text" class="form-control" placeholder="Nombre" id="nombre" required="required" />
                                 <div class="input-group-append">
                                     <div class="input-group-text"><i class="far fa-user"></i></div>
                                 </div>
@@ -144,7 +144,7 @@
                         </div>
                         <div class="control-group">
                             <div class="input-group">
-                                <input type="email" class="form-control" placeholder="Correo Electrónico" required="required" />
+                                <input type="email" class="form-control" placeholder="Correo Electrónico" id="correoElectronico" required="required" />
                                 <div class="input-group-append">
                                     <div class="input-group-text"><i class="far fa-envelope"></i></div>
                                 </div>
@@ -152,7 +152,7 @@
                         </div>
                         <div class="control-group">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Teléfono" required="required" />
+                                <input type="text" class="form-control" placeholder="Teléfono" id="telefono" required="required" />
                                 <div class="input-group-append">
                                     <div class="input-group-text"><i class="fa fa-mobile-alt"></i></div>
                                 </div>
@@ -160,7 +160,7 @@
                         </div>
                         <div class="control-group">
                             <div class="input-group date" id="date" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" placeholder="Fecha" data-target="#date" data-toggle="datetimepicker"/>
+                                <input type="text" class="form-control datetimepicker-input" placeholder="Fecha" id="fecha" data-target="#date" data-toggle="datetimepicker"/>
                                 <div class="input-group-append" data-target="#date" data-toggle="datetimepicker">
                                     <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
                                 </div>
@@ -168,7 +168,7 @@
                         </div>
                         <div class="control-group">
                             <div class="input-group time" id="time" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" placeholder="Hora" data-target="#time" data-toggle="datetimepicker"/>
+                                <input type="text" class="form-control datetimepicker-input" placeholder="Hora" id="hora" data-target="#time" data-toggle="datetimepicker"/>
                                 <div class="input-group-append" data-target="#time" data-toggle="datetimepicker">
                                     <div class="input-group-text"><i class="far fa-clock"></i></div>
                                 </div>
@@ -176,7 +176,7 @@
                         </div>
                         <div class="control-group">
                             <div class="input-group">
-                                <select class="custom-select form-control">
+                                <select class="custom-select form-control" id="numPersonas">
                                     <option selected>Número de Personas</option>
                                     <option value="1">1 Persona</option>
                                     <option value="2">2 Personas</option>
@@ -195,7 +195,7 @@
                             </div>
                         </div>
                         <div>
-                            <button class="btn custom-btn" type="submit">Reservar Ahora</button>
+                            <button class="btn custom-btn" type="button" onclick="reservarMesa()">Reservar Ahora</button>
                         </div>
                     </form>
                 </div>
@@ -204,154 +204,44 @@
     </div>
 </div>
 <!-- Reservas Fin -->
-<!-- Sobre Nosotros Inicio -->
-<div class="about">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <div class="about-img">
-                    <img src="img/about.jpg" alt="Imagen">
-                    <button type="button" class="btn-play" data-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">
-                        <span></span>
-                    </button>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="about-content">
-                    <div class="section-header">
-                        <p>Sobre Nosotros</p>
-                        <h2>Cocinando desde 1990</h2>
-                    </div>
-                    <div class="about-text">
-                        <p>
-                            En San Isidro, llevamos más de tres décadas ofreciendo experiencias culinarias únicas, con recetas que combinan tradición y sabores frescos de Ica.
-                        </p>
-                        <p>
-                            Nuestro compromiso es brindar calidad en cada plato, utilizando ingredientes locales y naturales. Aquí encontrarás un ambiente acogedor, ideal para compartir momentos especiales en buena compañía.
-                        </p>
-                        <a class="btn custom-btn" href="">Reserva una Mesa</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Sobre Nosotros Fin -->
 
-<!-- Modal de Video Inicio -->
-<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always" allow="autoplay"></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Modal de Video Fin -->
+<script>
+    // Función para obtener los datos del formulario y hacer el POST
+    function reservarMesa() {
+        // Obtener los valores del formulario
+        const reserva = {
+            nombre: document.getElementById('nombre').value,
+            correoElectronico: document.getElementById('correoElectronico').value,
+            telefono: document.getElementById('telefono').value,
+            fecha: document.getElementById('fecha').value,
+            hora: document.getElementById('hora').value,
+            numPersonas: document.getElementById('numPersonas').value
+        };
 
-<!-- Características Inicio -->
-<div class="feature">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-5">
-                <div class="section-header">
-                    <p>¿Por Qué Elegirnos?</p>
-                    <h2>Nuestras Principales Características</h2>
-                </div>
-                <div class="feature-text">
-                    <div class="feature-img">
-                        <div class="row">
-                            <div class="col-6">
-                                <img src="img/feature-1.jpg" alt="Imagen">
-                            </div>
-                            <div class="col-6">
-                                <img src="img/feature-2.jpg" alt="Imagen">
-                            </div>
-                            <div class="col-6">
-                                <img src="img/feature-3.jpg" alt="Imagen">
-                            </div>
-                            <div class="col-6">
-                                <img src="img/feature-4.jpg" alt="Imagen">
-                            </div>
-                        </div>
-                    </div>
-                    <p>
-                        Nos distinguimos por ofrecer productos frescos, recetas auténticas y un servicio cálido. Cada plato refleja nuestra pasión por la gastronomía local.
-                    </p>
-                    <a class="btn custom-btn" href="">Reserva una Mesa</a>
-                </div>
-            </div>
-            <div class="col-lg-7">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="feature-item">
-                            <i class="flaticon-cooking"></i>
-                            <h3>Chefs de clase mundial</h3>
-                            <p>
-                                Nuestros chefs combinan técnicas modernas con tradición para crear experiencias inolvidables.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="feature-item">
-                            <i class="flaticon-vegetable"></i>
-                            <h3>Ingredientes naturales</h3>
-                            <p>
-                                Priorizamos productos frescos y locales para garantizar calidad y sabor auténtico.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="feature-item">
-                            <i class="flaticon-medal"></i>
-                            <h3>Productos de la mejor calidad</h3>
-                            <p>
-                                Seleccionamos cuidadosamente cada ingrediente para mantener nuestros altos estándares.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="feature-item">
-                            <i class="flaticon-meat"></i>
-                            <h3>Verduras frescas y carnes selectas</h3>
-                            <p>
-                                Solo utilizamos los mejores cortes de carne y vegetales de origen sostenible.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="feature-item">
-                            <i class="flaticon-courier"></i>
-                            <h3>Entrega rápida a domicilio</h3>
-                            <p>
-                                Disfruta de nuestros platos en la comodidad de tu hogar con nuestro servicio de entrega eficiente.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="feature-item">
-                            <i class="flaticon-fruits-and-vegetables"></i>
-                            <h3>Bajos en grasa y saludables</h3>
-                            <p>
-                                Ofrecemos opciones saludables sin comprometer el sabor, perfectas para cualquier estilo de vida.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+        // Hacer el POST con fetch
+        fetch('http://localhost:8080/reservas', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json' // Especificamos que es JSON
+            },
+            body: JSON.stringify(reserva) // Convertimos el objeto JavaScript a JSON
+        })
+        .then(response => response.json()) // Convertir la respuesta a JSON
+        .then(data => {
+            // Aquí puedes manejar la respuesta
+            alert('Reserva realizada con éxito');
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Error al realizar la reserva:', error);
+            alert('Hubo un problema al realizar la reserva');
+        });
+    }
+</script>
+
+
+
+
 <!-- Características Fin -->
 <!-- Food Start -->
 <div class="food">
@@ -498,85 +388,7 @@
     </div>
 </div>
 <!-- Menu End -->
-<!-- Team Start -->
-<div class="team">
-    <div class="container">
-        <div class="section-header text-center">
-            <p>Nuestro Equipo</p>
-            <h2>Nuestros Maestros de Cocina</h2>
-        </div>
-        <div class="row">
-            <div class="col-lg-3 col-md-6">
-                <div class="team-item">
-                    <div class="team-img">
-                        <img src="img/team-1.jpg" alt="Chef 1">
-                        <div class="team-social">
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="team-text">
-                        <h2>Lucía Márquez</h2>
-                        <p>Chef Ejecutiva</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="team-item">
-                    <div class="team-img">
-                        <img src="img/team-2.jpg" alt="Chef 2">
-                        <div class="team-social">
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="team-text">
-                        <h2>Manuel Rojas</h2>
-                        <p>Experto en Parrillas</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="team-item">
-                    <div class="team-img">
-                        <img src="img/team-3.jpg" alt="Chef 3">
-                        <div class="team-social">
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="team-text">
-                        <h2>Sofía Gutiérrez</h2>
-                        <p>Pastelera</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="team-item">
-                    <div class="team-img">
-                        <img src="img/team-4.jpg" alt="Chef 4">
-                        <div class="team-social">
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="team-text">
-                        <h2>Carlos Ramírez</h2>
-                        <p>Chef de Cocina Criolla</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <!-- Team End -->
 <!-- Testimonial Start -->
 <div class="testimonial">
@@ -717,62 +529,7 @@
     </div>
 </div>
 <!-- Contact End -->
-<!-- Blog Start -->
-<div class="blog">
-    <div class="container">
-        <div class="section-header text-center">
-            <p>Blog Gastronómico</p>
-            <h2>Últimas Noticias del Blog Gastronómico</h2>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="blog-item">
-                    <div class="blog-img">
-                        <img src="img/blog-1.jpg" alt="Blog">
-                    </div>
-                    <div class="blog-content">
-                        <h2 class="blog-title">Descubre la gastronomía de Ica</h2>
-                        <div class="blog-meta">
-                            <p><i class="far fa-user"></i>Chef San Isidro</p>
-                            <p><i class="far fa-list-alt"></i>Culinaria</p>
-                            <p><i class="far fa-calendar-alt"></i>01-Oct-2024</p>
-                            <p><i class="far fa-comments"></i>5</p>
-                        </div>
-                        <div class="blog-text">
-                            <p>
-                                La gastronomía de Ica es rica y variada. Ven y descubre nuestros platos más emblemáticos, como el lomo saltado y el ají de gallina.
-                            </p>
-                            <a class="btn custom-btn" href="">Leer Más</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="blog-item">
-                    <div class="blog-img">
-                        <img src="img/blog-2.jpg" alt="Blog">
-                    </div>
-                    <div class="blog-content">
-                        <h2 class="blog-title">Los secretos del ceviche perfecto</h2>
-                        <div class="blog-meta">
-                            <p><i class="far fa-user"></i>Chef San Isidro</p>
-                            <p><i class="far fa-list-alt"></i>Culinaria</p>
-                            <p><i class="far fa-calendar-alt"></i>15-Oct-2024</p>
-                            <p><i class="far fa-comments"></i>8</p>
-                        </div>
-                        <div class="blog-text">
-                            <p>
-                                Aprende a preparar un ceviche que hará que tus invitados pidan más. ¡Es un plato que no puede faltar en tu mesa!
-                            </p>
-                            <a class="btn custom-btn" href="">Leer Más</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Blog End -->
+
 <!-- Footer Start -->
 <div class="footer">
     <div class="container">

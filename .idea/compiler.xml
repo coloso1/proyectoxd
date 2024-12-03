@@ -9,12 +9,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Proyecto Restaurante 1" />
         <module name="proyectoxd" />
+        <module name="proyecto-restaurante" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Proyecto Restaurante 1" options="-parameters" />
+      <module name="proyecto-restaurante" options="-parameters --enable-preview" />
       <module name="proyectoxd" options="-parameters" />
     </option>
   </component>
